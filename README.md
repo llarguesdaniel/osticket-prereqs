@@ -24,7 +24,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - Rewrite Module Install <a href="#Install_Internet_Information_Services">Internet Information Services</a>
 - Create PHP Directory <a href="#Install_Internet_Information_Services">Internet Information Services</a>
 - Install Visual C++ <a href="#Install_Internet_Information_Services">Internet Information Services</a>
-- Install MySQL <a href="#Install_Internet_Information_Services">Install MySQL</a>
+- Install MySQL <a href="#Install_MySQL">Install MySQL</a>
 - I
 - I
 - I
