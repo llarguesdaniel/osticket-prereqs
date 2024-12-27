@@ -25,10 +25,10 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - <a href="#Create_PHP_Directory">Create PHP Directory</a>
 - <a href="#Install_Visual_C++">Install Visual C++</a>
 - <a href="#Install_MySQL">Install MySQL</a>
-- I
-- I
-- I
-- I
+- <a href="#Register_PHP_within_IIS">Register PHP within IIS</a>
+- <a href="#Install_osTicket">Install osTicket</a>
+- <a href="#Install_MySQL">Install MySQL</a>
+- <a href="#Install_MySQL">Install MySQL</a>
 - I
 
 <h2>Installation Steps</h2>
@@ -87,7 +87,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>Register PHP within IIS</h3>
+<h3><a id="Register_PHP_within_IIS">Register PHP within IIS</a></h3>
 <p>
 <img src="https://imgur.com/f4GzaFH.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -96,7 +96,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>Install osTicket</h3>
+<h3><a id="Install_osTicket">Install osTicket</a></h3>
 <p>
 <img src="https://imgur.com/uEfA8pX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -105,7 +105,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>Load osTicket Site</h3>
+<h3>Load osTicket Site<a id="Install_osTicket">Install osTicket</a></h3>
 <p>
 <img src="https://imgur.com/R0gulKz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
