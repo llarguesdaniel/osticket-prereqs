@@ -19,7 +19,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
-- Install Internet Information Services <a id="Install_Internet_Information_Services">Install Internet Information Services</a>
+- Install Internet Information Services <a href="#Internet_Information_Services">Internet Information Services</a>
 - Install PHP Manager
 - Rewrite Module Install
 - Create PHP Directory
@@ -33,7 +33,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>Installation Steps</h2>
 
-<h3><a href="#Internet_Information_Services">Internet Information Services</a></h3>
+<h3><a id="Install_Internet_Information_Services">Install Internet Information Services</a></h3>
 <p>
 <img src="https://imgur.com/7rfQAMy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
