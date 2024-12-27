@@ -78,7 +78,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3><a id="Install_Internet_Information_Services">Install MySQL</a></h3>
+<h3><a id="Install_MySQL">Install MySQL</a></h3>
 <p>
 <img src="https://imgur.com/HvicKTg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
