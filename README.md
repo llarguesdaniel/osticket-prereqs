@@ -20,10 +20,10 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 <h2>List of Prerequisites</h2>
 
 - Install Internet Information Services <a href="#Install_Internet_Information_Services">Internet Information Services</a>
-- Install PHP Manager <a href="#Install_Internet_Information_Services">Internet Information Services</a>
-- Rewrite Module Install <a href="#Install_Internet_Information_Services">Internet Information Services</a>
-- Create PHP Directory <a href="#Install_Internet_Information_Services">Internet Information Services</a>
-- Install Visual C++ <a href="#Install_Internet_Information_Services">Internet Information Services</a>
+- Install PHP Manager <a href="#Install_PHP_Manager">Install PHP Manager</a>
+- Rewrite Module Install <a href="#Rewrite_Module_Install">Rewrite Module Install</a>
+- Create PHP Directory <a href="#Create_PHP_Directory">Create PHP Directory</a>
+- Install Visual C++ <a href="#Install_Visual_C++">Install Visual C++</a>
 - Install MySQL <a href="#Install_MySQL">Install MySQL</a>
 - I
 - I
@@ -42,7 +42,7 @@ Beginning the installation of osTicket, a prerequsite is the enabling of Intenet
 </p>
 <br />
 
-<h3>Install PHP Manager</h3>
+<h3><a id="Install_PHP_Manager">Install PHP Manager</a></h3>
 <p>
 <img src="https://imgur.com/8BFdHAE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -51,7 +51,7 @@ PHP Manager is a tool to set up and mangage PHP, which is a programming langauge
 </p>
 <br />
 
-<h3>Rewrite Module Install</h3>
+<h3><a id="Rewrite_Module_Install">Rewrite Module Install</a></h3>
 <p>
 <img src="https://imgur.com/PJ002kO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -60,7 +60,7 @@ When you install the URL Rewrite Module on IIS, it allows you to create clear an
 </p>
 <br />
 
-<h3>Create PHP directory</h3>
+<h3><a id="Create_PHP_Directory">Create PHP Directory</a></h3>
 <p>
 <img src="https://imgur.com/wjwAhlW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -69,7 +69,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>Install Visual C++</h3>
+<h3><a id="Install_Visual_C++">Install Visual C++</a></h3>
 <p>
 <img src="https://imgur.com/kccrQOz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
