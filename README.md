@@ -20,11 +20,11 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 <h2>List of Prerequisites</h2>
 
 - Install Internet Information Services <a href="#Install_Internet_Information_Services">Internet Information Services</a>
-- Install PHP Manager
-- Rewrite Module Install
-- Create PHP Directory
-- Install Visual C++
-- Install mySQL
+- Install PHP Manager <a href="#Install_Internet_Information_Services">Internet Information Services</a>
+- Rewrite Module Install <a href="#Install_Internet_Information_Services">Internet Information Services</a>
+- Create PHP Directory <a href="#Install_Internet_Information_Services">Internet Information Services</a>
+- Install Visual C++ <a href="#Install_Internet_Information_Services">Internet Information Services</a>
+- Install MySQL <a href="#Install_Internet_Information_Services">Install MySQL</a>
 - I
 - I
 - I
@@ -78,7 +78,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>Install MySQL</h3>
+<h3><a id="Install_Internet_Information_Services">Install MySQL</a></h3>
 <p>
 <img src="https://imgur.com/HvicKTg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
