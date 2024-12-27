@@ -19,12 +19,12 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
-- Install Internet Information Services <a href="#Install_Internet_Information_Services">Internet Information Services</a>
-- Install PHP Manager <a href="#Install_PHP_Manager">Install PHP Manager</a>
-- Rewrite Module Install <a href="#Rewrite_Module_Install">Rewrite Module Install</a>
-- Create PHP Directory <a href="#Create_PHP_Directory">Create PHP Directory</a>
-- Install Visual C++ <a href="#Install_Visual_C++">Install Visual C++</a>
-- Install MySQL <a href="#Install_MySQL">Install MySQL</a>
+- <a href="#Install_Internet_Information_Services">Internet Information Services</a>
+- <a href="#Install_PHP_Manager">Install PHP Manager</a>
+- <a href="#Rewrite_Module_Install">Rewrite Module Install</a>
+- <a href="#Create_PHP_Directory">Create PHP Directory</a>
+- <a href="#Install_Visual_C++">Install Visual C++</a>
+- <a href="#Install_MySQL">Install MySQL</a>
 - I
 - I
 - I
