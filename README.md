@@ -19,7 +19,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
-- Install Internet Information Services <a href="#Internet_Information_Services">Internet Information Services</a>
+- Install Internet Information Services <a href="#Install_Internet_Information_Services">Internet Information Services</a>
 - Install PHP Manager
 - Rewrite Module Install
 - Create PHP Directory
