@@ -28,8 +28,17 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - <a href="#Register_PHP_within_IIS">Register PHP within IIS</a>
 - <a href="#Install_osTicket">Install osTicket</a>
 - <a href="#Install_MySQL">Install MySQL</a>
-- <a href="#Install_MySQL">Install MySQL</a>
-- I
+- <a href="Register_PHP_within_IIS">Register PHP within IIS</a>
+- <a href="Install_osTicket">Install osTicket</a>
+- <a href="Load_osTicket_Site">Load osTicket Site</a>
+- <a href="Enable_PHP_Extensions">Enable PHP Extensions</a>
+- <a href="Reassign_Permissions">Reassign Permissions</a>
+- <a href="Install_HeidiSQL">Install HeidiSQL</a>
+- <a href="osTicket_Installed">osTicket Installed</a>
+- <a href="Help_Desk_Ticket_Page">Help Desk Ticket Page</a>
+
+
+
 
 <h2>Installation Steps</h2>
 
@@ -105,7 +114,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>Load osTicket Site<a id="Install_osTicket">Install osTicket</a></h3>
+<h3><a id="Load_osTicket_Site">Load osTicket Site</a></h3>
 <p>
 <img src="https://imgur.com/R0gulKz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -114,7 +123,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>Enable PHP Extensions</h3>
+<h3><a id="Enable_PHP_Extensions">Enable PHP Extensions</a></h3>
 <p>
 <img src="https://imgur.com/yASbzid.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -123,7 +132,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>Reassign Permissions</h3>
+<h3><a id="Reassign_Permissions">Reassign Permissions</a></h3>
 <p>
 <img src="https://imgur.com/lRs0y2G.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -132,7 +141,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>Install HeidiSQL</h3>
+<h3><a id="Install_HeidiSQL">Install HeidiSQL</a></h3>
 <p>
 <img src="https://imgur.com/BSoM9eB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -141,7 +150,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>osTicket Installed</h3>
+<h3><a id="osTicket_Installed">osTicket Installed</a></h3>
 <p>
 <img src="https://imgur.com/LmekkHM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -150,7 +159,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<h3>Help Desk Ticket Page</h3>
+<h3><a id="Help_Desk_Ticket_Page">Help Desk Ticket Page</a></h3>
 <p>
 <img src="https://imgur.com/mKB9bH6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
