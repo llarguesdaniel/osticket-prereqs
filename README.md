@@ -19,151 +19,236 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
+- Microsoft Azure
+- Basic Knowledge of IIS (Information Internet Services)
+- Remote Desktop Access
+- osTicket Installalation Files
+- HeidiSQL
+
+<h2>Index of Procedures</h2>
+
+- <a href="#Create_a_Virtual_Machine">Create a Virtual Machine</a>
+- <a href="#Accessing_the_Virtual_Machine">Accessing the Virtual Machine</a>
+- <a href="#Download_and_Prepare_Installation_Files">Download and Prepare Installation Files</a>
 - <a href="#Install_Internet_Information_Services">Internet Information Services</a>
-- <a href="#Install_PHP_Manager">Install PHP Manager</a>
-- <a href="#Rewrite_Module_Install">Rewrite Module Install</a>
-- <a href="#Create_PHP_Directory">Create PHP Directory</a>
-- <a href="#Install_Visual_C++">Install Visual C++</a>
+- <a href="#Install_Required_Files">Install Required Files</a>
+- <a href="#Set_Up_PHP">Set Up PHP</a>
 - <a href="#Install_MySQL">Install MySQL</a>
-- <a href="#Register_PHP_within_IIS">Register PHP within IIS</a>
+- <a href="#Configure_IIS">Configure IIS</a>
 - <a href="#Install_osTicket">Install osTicket</a>
-- <a href="#Install_MySQL">Install MySQL</a>
-- <a href="Register_PHP_within_IIS">Register PHP within IIS</a>
-- <a href="Install_osTicket">Install osTicket</a>
-- <a href="Load_osTicket_Site">Load osTicket Site</a>
-- <a href="Enable_PHP_Extensions">Enable PHP Extensions</a>
-- <a href="Reassign_Permissions">Reassign Permissions</a>
-- <a href="Install_HeidiSQL">Install HeidiSQL</a>
-- <a href="osTicket_Installed">osTicket Installed</a>
-- <a href="Help_Desk_Ticket_Page">Help Desk Ticket Page</a>
+- <a href="#Configure_osTicket">Configure osTicket</a>
+- <a href="#Reassign_Permissions">Reassign Permissions</a>
+- <a href="#Complete_osTicket_Setup">Complete osTicket Setup</a> 
+- <a href="#Install_HeidiSQL">Install HeidiSQL</a>
+- <a href="#Finalize_osTicket_Installation">Finalize osTicket Installation</a>
+- <a href="#Help_Desk_Ticket_Page">Help Desk Ticket Page</a>
 
 
 
 
 <h2>Installation Steps</h2>
+<h3><a id="Create_a_Virtual_Machine">1.) Create a Virtual Machine</a></h3> 
 
-<h3><a id="Install_Internet_Information_Services">Install Internet Information Services</a></h3>
+- In Microsoft Azure, we will create a Virtual Machine and make a new resource group, "osTicket".
+
+- **VM Name:** osTicket-vm
+- **Image:** Windows 10 Pro, version 22H2 - 64x Gen 2
+- **Size:** 2 vCPUs, 8 Gig Memory Minimum 
+
+Check the licensing box and review & create the VM. No changes are needed for management, disks, or networking sections.
+
+<p>
+<img src="https://imgur.com/thkBVC0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+<p>
+<img src="https://imgur.com/i51NX2S.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+
+<h3><a id="Accessing_the_Virtual_Machine">2.) Accessing the Virtual Machine</a></h3>
+
+- Log in to the VM using **Remote Desktop** with the credentials created during the VM setup.
+
+  
+<p>
+<img src="https://imgur.com/Z3oafg3.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+<h3><a id="Download_and_Prepare_Installation_Files">3.) Download and Prepare Installation Files</a></h3>
+
+- Within the VM, download the `osTicket-Installation-Files.zip` and unzip it to your desktop. The folder should be named `osTicket-Installation-Files`.
+
+<p>
+<img src="https://imgur.com/WdoV5ro.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+
+<h3><a id="Install_Internet_Information_Services">4.) Install Internet Information Services</a></h3>
+
+- Open **Control Panel** -> **Programs** -> **Turn Windows features on or off**.
+- Install/enable **IIS** with the following features:
+  - **World Wide Web Services** -> **Application Development Features** -> [X] CGI
+    
 <p>
 <img src="https://imgur.com/7rfQAMy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Beginning the installation of osTicket, a prerequsite is the enabling of Intenet Information Services (IIS). This is done by loading the Control Panel from the Windows Start Up Key. Within the Control Panel, clicking on Programs then Programs and Features gets you to a new window where IIS can be turned on. CGI must also be alllowed. From the IIS drop down, click World Web Management, click Application Development Features, this is where CGI can be enabled.
-</p>
-<br />
 
-<h3><a id="Install_PHP_Manager">Install PHP Manager</a></h3>
+
+<h3><a id="Install_Required_Files">5.) Install Required Files</a></h3>
+
+  - From the `osTicket-Installation-Files` folder:
+  - Install **PHP Manager for IIS**: `PHPManagerForIIS_V1.5.0.msi`.
+  - Install **Rewrite Module**: `rewrite_amd64_en-US.msi`.
+ 
 <p>
 <img src="https://imgur.com/8BFdHAE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-PHP Manager is a tool to set up and mangage PHP, which is a programming langauge. PHP Manager allows specific extensions from the configuration to be enabled or disabled, making it easy to add or remove features. Installing PHP Manager now allows for future access when registering from inside IIS to ensure optimal running of the server. 
-</p>
-<br />
 
-<h3><a id="Rewrite_Module_Install">Rewrite Module Install</a></h3>
+
 <p>
 <img src="https://imgur.com/PJ002kO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-When you install the URL Rewrite Module on IIS, it allows you to create clear and easy-to-read URLs for your website. This makes it simpler to manage redirects, which helps ensure visitors are sent to the correct pages, even if the URLs change. As well, the module helps organize the structure of your URLs, reducing the risk of broken links or confusion for both users and search engines.
-</p>
-<br />
 
-<h3><a id="Create_PHP_Directory">Create PHP Directory</a></h3>
+
+<h3><a id="Set_Up_PHP">6.) Set Up PHP</a></h3>
+
+- Create the directory `C:\PHP`.
+- Unzip `PHP 7.3.8` (`php-7.3.8-nts-Win32-VC15-x86.zip`) into the `C:\PHP` folder.
+- Install `VC_redist.x86.exe`.
+
 <p>
 <img src="https://imgur.com/wjwAhlW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<h3><a id="Install_Visual_C++">Install Visual C++</a></h3>
+<img src="https://imgur.com/DOp8eDG.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p>
 <img src="https://imgur.com/kccrQOz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<h3><a id="Install_MySQL">Install MySQL</a></h3>
+
+<h3><a id="Install_MySQL">7.) Install MySQL</a></h3>
+
+- From the `osTicket-Installation-Files` folder, install MySQL 5.5.62 (`mysql-5.5.62-win32.msi`).
+  - Select **Typical Setup**.
+  - Launch the Configuration Wizard:
+    - **Standard Configuration**
+    - Input a username and password, take note of this!
+      
 <p>
 <img src="https://imgur.com/HvicKTg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<h3><a id="Register_PHP_within_IIS">Register PHP within IIS</a></h3>
+<p>
+<img src="https://imgur.com/BijVEdY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+
+<h3><a id="Configure_IIS">8.) Configure IIS</a></h3>
+
+- Open IIS as an administrator.
+- Register PHP:
+  - Go to **PHP Manager** -> Register PHP path -> `C:\PHP\php-cgi.exe`.
+- Reload IIS (Stop and Start the server).
+
 <p>
 <img src="https://imgur.com/f4GzaFH.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<h3><a id="Install_osTicket">Install osTicket</a></h3>
+
+<h3><a id="Install_osTicket">9.) Install osTicket</a></h3>
+
+- From the `osTicket-Installation-Files` folder:
+  - Unzip `osTicket-v1.15.8.zip`.
+  - Copy the `upload` folder into `C:\inetpub\wwwroot`.
+  - Rename the `upload` folder to `osTicket`.
+- Reload IIS (Stop and Start the server).
+  
 <p>
 <img src="https://imgur.com/uEfA8pX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<h3><a id="Load_osTicket_Site">Load osTicket Site</a></h3>
+
+<h3><a id="Configure_osTicket">10.) Configure osTicket</a></h3>
+
+- Open IIS:
+  - Navigate to **Sites** -> **Default** -> **osTicket**.
+  - On the right, click **Browse *:80**.
+    
 <p>
 <img src="https://imgur.com/R0gulKz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<h3><a id="Enable_PHP_Extensions">Enable PHP Extensions</a></h3>
+- Some extensions that are not enabled. Return to IIS:
+  - Navigate to **Sites** -> **Default** -> **osTicket**.
+  - Double-click **PHP Manager** -> Click **Enable or disable an extension**.
+  - Enable the following extensions:
+    - `php_imap.dll`
+    - `php_intl.dll`
+    - `php_opcache.dll`
+      
 <p>
 <img src="https://imgur.com/yASbzid.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<h3><a id="Reassign_Permissions">Reassign Permissions</a></h3>
+
+<h3><a id="Reassign_Permissions">11.) Reassign Permissions</a></h3>
+
+- Rename `ost-config.php`:
+  - From: `C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php`
+  - To: `C:\inetpub\wwwroot\osTicket\include\ost-config.php`.
+- Assign Permissions:
+  - Disable inheritance -> Remove all permissions.
+  - Add new permissions -> **Everyone** -> **Full control**.
+
+<p>
+<img src="https://imgur.com/d79Eowd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
 <p>
 <img src="https://imgur.com/lRs0y2G.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<h3><a id="Install_HeidiSQL">Install HeidiSQL</a></h3>
+
+<h3><a id="Complete_osTicket_Setup">12.) Complete osTicket Setup</a></h3>
+
+- In the browser, continue the osTicket setup:
+  - Set **Helpdesk Name**.
+  - Set **Default email** (receives emails from customers).
+
+<p>
+<img src="https://imgur.com/ESTjfKy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+
+<h3><a id="Install_HeidiSQL">13.) Install HeidiSQL</a></h3>
+
+- From the `osTicket-Installation-Files` folder, install **HeidiSQL**.
+- Open HeidiSQL:
+  - Create a new session: Enter previously used username and password
+  - Connect to the session.
+  - Create a database named `osTicket`.
+    
 <p>
 <img src="https://imgur.com/BSoM9eB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<h3><a id="osTicket_Installed">osTicket Installed</a></h3>
 <p>
-<img src="https://imgur.com/LmekkHM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/BfQLaku.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<h3><a id="Help_Desk_Ticket_Page">Help Desk Ticket Page</a></h3>
+
+
+<h3><a id="Help_Desk_Ticket_Page">14.) Verify Completion</a></h3>
+
+- Access your help desk login page: `http://localhost/osTicket/scp/login.php`.
+  
 <p>
 <img src="https://imgur.com/mKB9bH6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
+
+<h2>Conclusion</h2>
+
+In summary, you have installed and configured osTicket on your virtual machine. Your help desk system is now ready to use.
+
 <br />
