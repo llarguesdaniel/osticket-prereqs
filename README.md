@@ -55,11 +55,12 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - **Image:** Windows 10 Pro, version 22H2 - 64x Gen 2
 - **Size:** 2 vCPUs, 8 Gig Memory Minimum 
 
-Check the licensing box and review & create the VM. No changes are needed for management, disks, or networking sections.
 
 <p>
 <img src="https://imgur.com/thkBVC0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+
+- Check the licensing box and review & create the VM. No changes are needed for management, disks, or networking sections.
 
 <p>
 <img src="https://imgur.com/i51NX2S.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -99,12 +100,12 @@ Check the licensing box and review & create the VM. No changes are needed for ma
 
   - From the `osTicket-Installation-Files` folder:
   - Install **PHP Manager for IIS**: `PHPManagerForIIS_V1.5.0.msi`.
-  - Install **Rewrite Module**: `rewrite_amd64_en-US.msi`.
  
 <p>
 <img src="https://imgur.com/8BFdHAE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
+ - Install **Rewrite Module**: `rewrite_amd64_en-US.msi`.
 
 <p>
 <img src="https://imgur.com/PJ002kO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -114,14 +115,19 @@ Check the licensing box and review & create the VM. No changes are needed for ma
 <h3><a id="Set_Up_PHP">6.) Set Up PHP</a></h3>
 
 - Create the directory `C:\PHP`.
-- Unzip `PHP 7.3.8` (`php-7.3.8-nts-Win32-VC15-x86.zip`) into the `C:\PHP` folder.
-- Install `VC_redist.x86.exe`.
 
 <p>
 <img src="https://imgur.com/wjwAhlW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+
+- Unzip `PHP 7.3.8` (`php-7.3.8-nts-Win32-VC15-x86.zip`) into the `C:\PHP` folder.
+  
 <p>
 <img src="https://imgur.com/DOp8eDG.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+- Install `VC_redist.x86.exe`.
+  
 <p>
 <img src="https://imgur.com/kccrQOz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -197,14 +203,15 @@ Check the licensing box and review & create the VM. No changes are needed for ma
 - Rename `ost-config.php`:
   - From: `C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php`
   - To: `C:\inetpub\wwwroot\osTicket\include\ost-config.php`.
-- Assign Permissions:
-  - Disable inheritance -> Remove all permissions.
-  - Add new permissions -> **Everyone** -> **Full control**.
 
 <p>
 <img src="https://imgur.com/d79Eowd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
+- Assign Permissions:
+  - Disable inheritance -> Remove all permissions.
+  - Add new permissions -> **Everyone** -> **Full control**.
+    
 <p>
 <img src="https://imgur.com/lRs0y2G.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
