@@ -44,7 +44,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - <a href="#Help_Desk_Ticket_Page">Help Desk Ticket Page</a>
 
 
-
+---
 
 <h2>Installation Steps</h2>
 <h3><a id="Create_a_Virtual_Machine">1.) Create a Virtual Machine</a></h3> 
