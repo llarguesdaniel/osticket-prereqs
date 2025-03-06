@@ -40,7 +40,6 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - <a href="#Reassign_Permissions">Reassign Permissions</a>
 - <a href="#Complete_osTicket_Setup">Complete osTicket Setup</a> 
 - <a href="#Install_HeidiSQL">Install HeidiSQL</a>
-- <a href="#Finalize_osTicket_Installation">Finalize osTicket Installation</a>
 - <a href="#Help_Desk_Ticket_Page">Help Desk Ticket Page</a>
 
 
